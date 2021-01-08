@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { Department } from "../../domain/department";
+import { Department } from "../domain/department";
 @Injectable()
 export class DataService {
   deps: Department[] = [];

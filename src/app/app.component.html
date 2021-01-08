@@ -2,3 +2,35 @@
 <p>
   Start editing to see some magic happen :)
 </p>
+
+<button (click)="onLoad()">Departments</button>
+
+<div *ngFor="let dep of this.dataService.deps">
+  {{dep.codeDepartment}} - {{dep.description}} - {{dep.location}} - {{dep.name}}
+
+</div>
+<hr>
+<div class="ui raised segment">
+	<h2 class="ui header">Demo Form: Sku with Builder</h2>
+	<form [formGroup]="this.dataService.frmDep" (ngSubmit)="onSubmit(this.dataService.frmDep.value)" class="ui form">
+
+		<div class="field">
+			<label for="codeDepartment">codeDepartment</label>
+			<input type="text" id="codeDepartment" placeholder="codeDepartment" [formControl]="this.dataService.frmDep.controls['codeDepartment']">
+    </div>
+
+		<div class="field">
+			<label for="description">description</label>
+			<input type="text" id="description" placeholder="description" [formControl]="this.dataService.frmDep.controls['description']">
+    </div>
+			<button type="submit" class="ui button">Submit</button>
+	</form>
+</div>
+
+
+  <!--codeDepartment: number;
+  dateOpened: Date;
+  description: string;
+  location: string;
+  name: string;
+  telephone: string;-->
